@@ -3,24 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Urban Burgers</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+<title>Urban Burgers | Street Food</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
+
+:root{
+    --primary:#ff3c00;
+    --dark:#0f0f0f;
+    --card:#1a1a1a;
+    --light:#f5f5f5;
+}
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
 }
 
 body{
-    background:#111;
+    background:var(--dark);
     color:white;
+    font-family:'Poppins',sans-serif;
+}
+
+h1,h2,h3{
+    font-family:'Bebas Neue',sans-serif;
+    letter-spacing:1px;
 }
 
 header{
-    height:100vh;
-    background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+    height:90vh;
+    background:linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
     url('https://images.unsplash.com/photo-1550547660-d9450f859349');
     background-size:cover;
     background-position:center;
@@ -29,59 +45,63 @@ header{
     justify-content:center;
     align-items:center;
     text-align:center;
+    padding:20px;
 }
 
 header h1{
-    font-size:4rem;
-    font-weight:800;
-    color:#ff3c00;
+    font-size:5rem;
+    color:var(--primary);
 }
 
 header p{
     margin:20px 0;
+    font-weight:300;
     font-size:1.2rem;
 }
 
 .btn{
-    padding:12px 30px;
-    background:#ff3c00;
+    background:var(--primary);
+    padding:14px 35px;
+    border-radius:30px;
     color:white;
     text-decoration:none;
-    border-radius:30px;
-    transition:0.3s;
+    font-weight:600;
+    transition:.3s;
 }
 
 .btn:hover{
     background:white;
-    color:#ff3c00;
+    color:var(--primary);
 }
 
 section{
-    padding:60px 10%;
+    padding:70px 8%;
 }
 
 section h2{
-    text-align:center;
+    font-size:3rem;
+    color:var(--primary);
     margin-bottom:40px;
-    font-size:2.5rem;
-    color:#ff3c00;
+    text-align:center;
 }
 
-.menu{
+.grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:30px;
 }
 
 .card{
-    background:#1c1c1c;
+    background:var(--card);
     border-radius:15px;
     overflow:hidden;
-    transition:0.3s;
+    transition:.4s;
+    box-shadow:0 0 0 transparent;
 }
 
 .card:hover{
-    transform:scale(1.05);
+    transform:translateY(-10px);
+    box-shadow:0 10px 25px rgba(255,60,0,.4);
 }
 
 .card img{
@@ -96,19 +116,28 @@ section h2{
 
 .card-content h3{
     margin-bottom:10px;
+    font-size:1.5rem;
 }
 
 .price{
     margin-top:10px;
     font-weight:600;
-    color:#ff3c00;
+    color:var(--primary);
+    font-size:1.1rem;
+}
+
+.highlight{
+    background:linear-gradient(135deg,#ff3c00,#ff6a00);
+    padding:40px;
+    border-radius:20px;
 }
 
 footer{
     text-align:center;
-    padding:20px;
+    padding:25px;
     background:#000;
-    margin-top:40px;
+    margin-top:60px;
+    font-size:.9rem;
 }
 
 .whatsapp{
@@ -116,12 +145,29 @@ footer{
     bottom:20px;
     right:20px;
     background:#25D366;
+    padding:15px 25px;
+    border-radius:50px;
     color:white;
-    padding:15px;
-    border-radius:50%;
+    font-weight:600;
     text-decoration:none;
-    font-size:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,.4);
+    transition:.3s;
 }
+
+.whatsapp:hover{
+    transform:scale(1.1);
+}
+
+/* Responsive adjustments */
+@media(max-width:768px){
+    header h1{
+        font-size:3rem;
+    }
+    section h2{
+        font-size:2.2rem;
+    }
+}
+
 </style>
 </head>
 
@@ -129,58 +175,166 @@ footer{
 
 <header>
     <h1>Urban Burgers</h1>
-    <p>El sabor callejero que domina la ciudad</p>
-    <a href="#menu" class="btn">Ver Menú</a>
+    <p>Auténtico Street Food con ingredientes premium y sabor explosivo.</p>
+    <a href="#hamburguesas" class="btn">Ver Menú</a>
 </header>
 
-<section id="menu">
-    <h2>Nuestro Menú</h2>
-    <div class="menu">
+<!-- HAMBURGUESAS -->
+<section id="hamburguesas">
+<h2>Hamburguesas</h2>
+<div class="grid">
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd">
-            <div class="card-content">
-                <h3>Street Classic</h3>
-                <p>Carne 100% res, queso cheddar y salsa especial.</p>
-                <div class="price">$5.99</div>
-            </div>
-        </div>
+<!-- 8 Burgers -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd">
+<div class="card-content">
+<h3>Street Classic</h3>
+<p>Res premium, cheddar americano, lechuga fresca y salsa secreta.</p>
+<div class="price">$6.99</div>
+</div>
+</div>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433b">
-            <div class="card-content">
-                <h3>Smash King</h3>
-                <p>Doble carne smash, bacon crujiente y queso.</p>
-                <div class="price">$7.49</div>
-            </div>
-        </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1553979459-d2229ba7433b">
+<div class="card-content">
+<h3>Smash King</h3>
+<p>Doble smash beef, bacon crujiente y queso fundido.</p>
+<div class="price">$8.49</div>
+</div>
+</div>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1541599540903-216a46ca1dc0">
-            <div class="card-content">
-                <h3>Combo Urbano</h3>
-                <p>Hamburguesa + papas + bebida.</p>
-                <div class="price">$9.99</div>
-            </div>
-        </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1550317138-10000687a72b">
+<div class="card-content">
+<h3>Urban Fire</h3>
+<p>Carne jugosa, jalapeños, queso pepper jack y salsa picante.</p>
+<div class="price">$7.99</div>
+</div>
+</div>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1551024709-8f23befc6b1f">
-            <div class="card-content">
-                <h3>Malteada Oreo</h3>
-                <p>Batido cremoso con trozos de Oreo.</p>
-                <div class="price">$3.99</div>
-            </div>
-        </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1606755962773-d324e2c9b7b5">
+<div class="card-content">
+<h3>BBQ Smoke</h3>
+<p>Res angus, cebolla caramelizada y salsa BBQ ahumada.</p>
+<div class="price">$8.99</div>
+</div>
+</div>
 
-    </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1596662951482-0c4ba74a6df6">
+<div class="card-content">
+<h3>Cheese Overload</h3>
+<p>Triple queso, carne premium y pan brioche tostado.</p>
+<div class="price">$9.49</div>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1606756790138-261d2b21cdba">
+<div class="card-content">
+<h3>Guacamole Street</h3>
+<p>Carne artesanal, guacamole fresco y tomate orgánico.</p>
+<div class="price">$8.79</div>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90">
+<div class="card-content">
+<h3>Monster Doble</h3>
+<p>Doble carne angus, doble cheddar y bacon.</p>
+<div class="price">$10.99</div>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1610614819513-58e34989848b">
+<div class="card-content">
+<h3>Truffle Elite</h3>
+<p>Res premium, queso suizo y mayo de trufa.</p>
+<div class="price">$11.99</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- PAPAS DESTACADAS -->
+<section>
+<h2>Complementos - Papas Fritas</h2>
+<div class="grid highlight">
+
+<div class="card">
+<div class="card-content">
+<h3>Papas Clásicas</h3>
+<p>Crujientes y doradas al punto perfecto.</p>
+<div class="price">$2.49</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-content">
+<h3>Papas con Queso</h3>
+<p>Con cheddar fundido y topping especial.</p>
+<div class="price">$3.49</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-content">
+<h3>Papas BBQ</h3>
+<p>Con salsa BBQ y bacon crujiente.</p>
+<div class="price">$3.99</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-content">
+<h3>Papas Supreme</h3>
+<p>Queso, jalapeños y salsa urbana.</p>
+<div class="price">$4.49</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- BEBIDAS -->
+<section>
+<h2>Bebidas</h2>
+<div class="grid">
+
+<div class="card"><div class="card-content"><h3>Coca-Cola</h3><div class="price">$1.50</div></div></div>
+<div class="card"><div class="card-content"><h3>Sprite</h3><div class="price">$1.50</div></div></div>
+<div class="card"><div class="card-content"><h3>Fanta</h3><div class="price">$1.50</div></div></div>
+<div class="card"><div class="card-content"><h3>Pepsi</h3><div class="price">$1.50</div></div></div>
+<div class="card"><div class="card-content"><h3>Jugo Natural de Fresa</h3><div class="price">$2.99</div></div></div>
+<div class="card"><div class="card-content"><h3>Jugo Natural de Mango</h3><div class="price">$2.99</div></div></div>
+<div class="card"><div class="card-content"><h3>Jugo Natural de Piña</h3><div class="price">$2.99</div></div></div>
+<div class="card"><div class="card-content"><h3>Limonada Natural</h3><div class="price">$2.49</div></div></div>
+
+</div>
+</section>
+
+<!-- POSTRES -->
+<section>
+<h2>Postres</h2>
+<div class="grid">
+
+<div class="card"><div class="card-content"><h3>Brownie Supreme</h3><div class="price">$3.99</div></div></div>
+<div class="card"><div class="card-content"><h3>Cheesecake Oreo</h3><div class="price">$4.49</div></div></div>
+<div class="card"><div class="card-content"><h3>Milkshake Chocolate</h3><div class="price">$3.99</div></div></div>
+<div class="card"><div class="card-content"><h3>Helado Artesanal</h3><div class="price">$2.99</div></div></div>
+
+</div>
 </section>
 
 <footer>
-    © 2026 Urban Burgers | Modelo Web Profesional
+© 2026 Urban Burgers | Modelo Web Profesional para Restaurantes
 </footer>
 
-<a href="https://wa.me/50300000000" class="whatsapp">💬</a>
+<a href="https://wa.me/50300000000" class="whatsapp">Pedir ahora</a>
 
 </body>
 </html>
