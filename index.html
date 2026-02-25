@@ -3,111 +3,159 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Restaurante La Delicia</title>
+<title>Power Burger</title>
+
 <style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f8f8f8;
+:root{
+    --rojo:#e63946;
+    --azul:#1d3557;
+    --amarillo:#ffbe0b;
 }
 
-header {
-    background: #111;
-    color: white;
-    text-align: center;
-    padding: 40px 20px;
+body{
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    background:#f4f4f4;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 36px;
+header{
+    background:linear-gradient(135deg,var(--rojo),var(--azul));
+    color:white;
+    text-align:center;
+    padding:70px 20px;
 }
 
-header p {
-    margin-top: 10px;
-    font-size: 18px;
-    color: #ccc;
+header h1{
+    margin:0;
+    font-size:48px;
 }
 
-.section {
-    padding: 40px 20px;
-    text-align: center;
+header p{
+    margin-top:10px;
+    font-size:18px;
 }
 
-.menu-item {
-    background: white;
-    margin: 15px auto;
-    padding: 20px;
-    max-width: 400px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+.section{
+    padding:60px 20px;
+    text-align:center;
 }
 
-.menu-item h3 {
-    margin: 0;
+.section h2{
+    color:var(--azul);
+    margin-bottom:40px;
+    font-size:32px;
 }
 
-.price {
-    color: #27ae60;
-    font-weight: bold;
-    margin-top: 5px;
+.menu-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    max-width:1100px;
+    margin:auto;
 }
 
-.whatsapp {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 15px 25px;
-    background: #25D366;
-    color: white;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: bold;
+.card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    transition:0.3s;
+    border-top:6px solid var(--amarillo);
 }
 
-footer {
-    background: #111;
-    color: white;
-    text-align: center;
-    padding: 20px;
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h3{
+    margin:0;
+    color:var(--rojo);
+    font-size:20px;
+}
+
+.price{
+    margin-top:10px;
+    font-weight:bold;
+    color:var(--azul);
+    font-size:18px;
+}
+
+.bebidas{
+    background:var(--amarillo);
+}
+
+footer{
+    background:var(--azul);
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+/* BOTÓN WHATSAPP */
+.whatsapp-float{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:white;
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:30px;
+    text-decoration:none;
+    box-shadow:0 6px 18px rgba(0,0,0,0.3);
+    transition:0.3s;
+}
+
+.whatsapp-float:hover{
+    transform:scale(1.1);
 }
 </style>
 </head>
 <body>
 
 <header>
-    <h1>Restaurante La Delicia</h1>
-    <p>Comida deliciosa, rápida y al mejor precio</p>
+    <h1>Power Burger</h1>
+    <p>Las hamburguesas más brutales de la ciudad 🍔🔥</p>
 </header>
 
 <div class="section">
-    <h2>Menú</h2>
+    <h2>🍔 Nuestras Hamburguesas</h2>
+    <div class="menu-grid">
 
-    <div class="menu-item">
-        <h3>Hamburguesa Clásica</h3>
-        <p>Carne, queso, lechuga y tomate</p>
-        <div class="price">$5.99</div>
+        <div class="card"><h3>Clásica Power</h3><div class="price">$5.99</div></div>
+        <div class="card"><h3>Doble Explosión</h3><div class="price">$7.99</div></div>
+        <div class="card"><h3>BBQ Master</h3><div class="price">$6.75</div></div>
+        <div class="card"><h3>Cheese Lover</h3><div class="price">$6.50</div></div>
+        <div class="card"><h3>Spicy Fire</h3><div class="price">$6.80</div></div>
+        <div class="card"><h3>Triple Monster</h3><div class="price">$9.99</div></div>
+        <div class="card"><h3>Chicken Crunch</h3><div class="price">$6.25</div></div>
+        <div class="card"><h3>Veggie Fresh</h3><div class="price">$5.50</div></div>
+
     </div>
+</div>
 
-    <div class="menu-item">
-        <h3>Pizza Familiar</h3>
-        <p>Pepperoni y queso extra</p>
-        <div class="price">$12.99</div>
+<div class="section bebidas">
+    <h2>🥤 Bebidas</h2>
+    <div class="menu-grid">
+
+        <div class="card"><h3>Coca-Cola</h3><div class="price">$1.50</div></div>
+        <div class="card"><h3>Pepsi</h3><div class="price">$1.50</div></div>
+        <div class="card"><h3>Limonada Natural</h3><div class="price">$2.00</div></div>
+        <div class="card"><h3>Malteada Chocolate</h3><div class="price">$3.50</div></div>
+        <div class="card"><h3>Malteada Fresa</h3><div class="price">$3.50</div></div>
+
     </div>
-
-    <div class="menu-item">
-        <h3>Combo Pollo Frito</h3>
-        <p>3 piezas + papas + bebida</p>
-        <div class="price">$6.50</div>
-    </div>
-
-    <a class="whatsapp" href="https://wa.me/50300000000" target="_blank">
-        Ordenar por WhatsApp
-    </a>
 </div>
 
 <footer>
-    © 2026 Restaurante La Delicia | Todos los derechos reservados
+    © 2026 Power Burger | Todos los derechos reservados
 </footer>
+
+<a class="whatsapp-float" href="https://wa.me/50300000000" target="_blank">💬</a>
 
 </body>
 </html>
