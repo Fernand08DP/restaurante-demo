@@ -3,159 +3,184 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Power Burger</title>
-
+<title>Urban Burgers</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 <style>
-:root{
-    --rojo:#e63946;
-    --azul:#1d3557;
-    --amarillo:#ffbe0b;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
 }
 
 body{
-    margin:0;
-    font-family:'Segoe UI',sans-serif;
-    background:#f4f4f4;
+    background:#111;
+    color:white;
 }
 
 header{
-    background:linear-gradient(135deg,var(--rojo),var(--azul));
-    color:white;
+    height:100vh;
+    background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+    url('https://images.unsplash.com/photo-1550547660-d9450f859349');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
     text-align:center;
-    padding:70px 20px;
 }
 
 header h1{
-    margin:0;
-    font-size:48px;
+    font-size:4rem;
+    font-weight:800;
+    color:#ff3c00;
 }
 
 header p{
-    margin-top:10px;
-    font-size:18px;
+    margin:20px 0;
+    font-size:1.2rem;
 }
 
-.section{
-    padding:60px 20px;
+.btn{
+    padding:12px 30px;
+    background:#ff3c00;
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:white;
+    color:#ff3c00;
+}
+
+section{
+    padding:60px 10%;
+}
+
+section h2{
     text-align:center;
-}
-
-.section h2{
-    color:var(--azul);
     margin-bottom:40px;
-    font-size:32px;
+    font-size:2.5rem;
+    color:#ff3c00;
 }
 
-.menu-grid{
+.menu{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
-    max-width:1100px;
-    margin:auto;
+    gap:30px;
 }
 
 .card{
-    background:white;
-    padding:25px;
+    background:#1c1c1c;
     border-radius:15px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    overflow:hidden;
     transition:0.3s;
-    border-top:6px solid var(--amarillo);
 }
 
 .card:hover{
-    transform:translateY(-8px);
+    transform:scale(1.05);
 }
 
-.card h3{
-    margin:0;
-    color:var(--rojo);
-    font-size:20px;
+.card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card-content h3{
+    margin-bottom:10px;
 }
 
 .price{
     margin-top:10px;
-    font-weight:bold;
-    color:var(--azul);
-    font-size:18px;
-}
-
-.bebidas{
-    background:var(--amarillo);
+    font-weight:600;
+    color:#ff3c00;
 }
 
 footer{
-    background:var(--azul);
-    color:white;
     text-align:center;
-    padding:30px;
+    padding:20px;
+    background:#000;
+    margin-top:40px;
 }
 
-/* BOTÓN WHATSAPP */
-.whatsapp-float{
+.whatsapp{
     position:fixed;
     bottom:20px;
     right:20px;
     background:#25D366;
     color:white;
-    width:65px;
-    height:65px;
+    padding:15px;
     border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:30px;
     text-decoration:none;
-    box-shadow:0 6px 18px rgba(0,0,0,0.3);
-    transition:0.3s;
-}
-
-.whatsapp-float:hover{
-    transform:scale(1.1);
+    font-size:20px;
 }
 </style>
 </head>
+
 <body>
 
 <header>
-    <h1>Power Burger</h1>
-    <p>Las hamburguesas más brutales de la ciudad 🍔🔥</p>
+    <h1>Urban Burgers</h1>
+    <p>El sabor callejero que domina la ciudad</p>
+    <a href="#menu" class="btn">Ver Menú</a>
 </header>
 
-<div class="section">
-    <h2>🍔 Nuestras Hamburguesas</h2>
-    <div class="menu-grid">
+<section id="menu">
+    <h2>Nuestro Menú</h2>
+    <div class="menu">
 
-        <div class="card"><h3>Clásica Power</h3><div class="price">$5.99</div></div>
-        <div class="card"><h3>Doble Explosión</h3><div class="price">$7.99</div></div>
-        <div class="card"><h3>BBQ Master</h3><div class="price">$6.75</div></div>
-        <div class="card"><h3>Cheese Lover</h3><div class="price">$6.50</div></div>
-        <div class="card"><h3>Spicy Fire</h3><div class="price">$6.80</div></div>
-        <div class="card"><h3>Triple Monster</h3><div class="price">$9.99</div></div>
-        <div class="card"><h3>Chicken Crunch</h3><div class="price">$6.25</div></div>
-        <div class="card"><h3>Veggie Fresh</h3><div class="price">$5.50</div></div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd">
+            <div class="card-content">
+                <h3>Street Classic</h3>
+                <p>Carne 100% res, queso cheddar y salsa especial.</p>
+                <div class="price">$5.99</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433b">
+            <div class="card-content">
+                <h3>Smash King</h3>
+                <p>Doble carne smash, bacon crujiente y queso.</p>
+                <div class="price">$7.49</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1541599540903-216a46ca1dc0">
+            <div class="card-content">
+                <h3>Combo Urbano</h3>
+                <p>Hamburguesa + papas + bebida.</p>
+                <div class="price">$9.99</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1551024709-8f23befc6b1f">
+            <div class="card-content">
+                <h3>Malteada Oreo</h3>
+                <p>Batido cremoso con trozos de Oreo.</p>
+                <div class="price">$3.99</div>
+            </div>
+        </div>
 
     </div>
-</div>
-
-<div class="section bebidas">
-    <h2>🥤 Bebidas</h2>
-    <div class="menu-grid">
-
-        <div class="card"><h3>Coca-Cola</h3><div class="price">$1.50</div></div>
-        <div class="card"><h3>Pepsi</h3><div class="price">$1.50</div></div>
-        <div class="card"><h3>Limonada Natural</h3><div class="price">$2.00</div></div>
-        <div class="card"><h3>Malteada Chocolate</h3><div class="price">$3.50</div></div>
-        <div class="card"><h3>Malteada Fresa</h3><div class="price">$3.50</div></div>
-
-    </div>
-</div>
+</section>
 
 <footer>
-    © 2026 Power Burger | Todos los derechos reservados
+    © 2026 Urban Burgers | Modelo Web Profesional
 </footer>
 
-<a class="whatsapp-float" href="https://wa.me/50300000000" target="_blank">💬</a>
+<a href="https://wa.me/50300000000" class="whatsapp">💬</a>
 
 </body>
 </html>
